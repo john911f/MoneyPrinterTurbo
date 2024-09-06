@@ -91,31 +91,23 @@ def combine_videos(
                 if clip_ratio == video_ratio:
                     # 等比例缩放
                     clip = clip.resize((video_width, video_height))
+                elif clip_ratio > video_ratio:
+                    # Case 2: Clip is wider than the target aspect ratio
+                    # Crop the width from the center
+                    new_width = int(clip_h * video_ratio)  # Calculate new width based on target ratio
+                    crop_x = (clip_w - new_width) / 2      # Calculate the x-coordinate to start cropping
+                    clip = clip.crop(x1=crop_x, y1=0, x2=crop_x + new_width, y2=clip_h)
+                    clip = clip.resize((video_width, video_height))
                 else:
-                    # 等比缩放视频
-                    if clip_ratio > video_ratio:
-                        # 按照目标宽度等比缩放
-                        scale_factor = video_width / clip_w
-                    else:
-                        # 按照目标高度等比缩放
-                        scale_factor = video_height / clip_h
-
-                    new_width = int(clip_w * scale_factor)
-                    new_height = int(clip_h * scale_factor)
-                    clip_resized = clip.resize(newsize=(new_width, new_height))
-
-                    background = ColorClip(
-                        size=(video_width, video_height), color=(0, 0, 0)
-                    )
-                    clip = CompositeVideoClip(
-                        [
-                            background.set_duration(clip.duration),
-                            clip_resized.set_position("center"),
-                        ]
-                    )
+                    # Case 3: Clip is taller than the target aspect ratio
+                    # Crop the height from the center
+                    new_height = int(clip_w / video_ratio)  # Calculate new height based on target ratio
+                    crop_y = (clip_h - new_height) / 2      # Calculate the y-coordinate to start cropping
+                    clip = clip.crop(x1=0, y1=crop_y, x2=clip_w, y2=crop_y + new_height)
+                    clip = clip.resize((video_width, video_height))
 
                 logger.info(
-                    f"resizing video to {video_width} x {video_height}, clip size: {clip_w} x {clip_h}"
+                    f"cropping video to {video_width} x {video_height}, clip size: {clip_w} x {clip_h}"
                 )
 
             if clip.duration > max_clip_duration:
