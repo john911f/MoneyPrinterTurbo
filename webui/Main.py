@@ -784,7 +784,10 @@ if start_button:
     logger.info(utils.to_json(params))
     scroll_to_bottom()
 
+    print(st.session_state)
+
     result = tm.start(task_id=task_id, params=params)
+
     if not result or "videos" not in result:
         st.error(tr("Video Generation Failed"))
         logger.error(tr("Video Generation Failed"))

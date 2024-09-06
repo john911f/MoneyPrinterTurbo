@@ -1,0 +1,39 @@
+video_subject: "what the bruce"
+video_script: |
+  BRUCE, LEE.
+  hahaha
+  huhuhu
+video_terms: ""
+video_aspect: "9:16"
+video_concat_mode: "random"
+video_clip_duration: 3
+video_count: 1
+video_source: "local"
+video_materials:
+  - provider: "local"
+    url: "D:\\DEV\\MoneyPrinterTurbo\\storage\\local_videos\\a4f0e014-2f11-4f64-9941-4eeb88a89931_chinese style simple ink landscape painting ancient bamboo leaves background video_1080.mp4"
+    duration: 0
+  - provider: "local"
+    url: "D:\\DEV\\MoneyPrinterTurbo\\storage\\local_videos\\a12954c5-e01c-4f42-b76a-5ee021c40f90_Ink Master Deforum Animation Hybrid Video 4K_1080p.mp4"
+    duration: 0
+  - provider: "local"
+    url: "D:\\DEV\\MoneyPrinterTurbo\\storage\\local_videos\\e9e0ee29-2b8d-4da2-bb95-026ed951b556_Consistency test Inside nature Deforum animation 4K_1080p.mp4"
+    duration: 0
+video_language: ""
+voice_name: "en-US-AnaNeural-Female"
+voice_volume: 1.0
+voice_rate: 0.8
+bgm_type: "custom"
+bgm_file: "D:\\DEV\\guqin.mp3"
+bgm_volume: 0.2
+subtitle_enabled: true
+subtitle_position: "custom"
+custom_position: 33.0
+font_name: "UTM Kabel KT.ttf"
+text_fore_color: "#ffffff"
+text_background_color: "transparent"
+font_size: 100
+stroke_color: "#000000"
+stroke_width: 1.5
+n_threads: 2
+paragraph_number: 1
