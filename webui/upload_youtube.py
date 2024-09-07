@@ -80,7 +80,7 @@ def upload_video(youtube, file_path, title, description, tags, category_id='22')
             'categoryId': category_id
         },
         'status': {
-            'privacyStatus': 'private',  # or 'private' or 'unlisted'
+            'privacyStatus': 'public',  # or 'private' or 'unlisted'
             'selfDeclaredMadeForKids':False
         },
     }
@@ -102,7 +102,7 @@ def upload_video(youtube, file_path, title, description, tags, category_id='22')
     print(f"Upload complete! Video ID: {video_id}")
     return video_id
 
-def upload_youtube(video_file, title, description, tags):
+def upload_youtube(video_file, title, description, tags, playlist):
     # Authenticate and construct the YouTube service object
     credentials = None
     if os.path.exists('token.json'):
@@ -118,7 +118,7 @@ def upload_youtube(video_file, title, description, tags):
 
     youtube = build('youtube', 'v3', credentials=credentials)
 
-    playlist_id = get_or_create_playlist(youtube, PLAYLIST_TITLE, PLAYLIST_DESCRIPTION)
+    playlist_id = get_or_create_playlist(youtube, playlist, PLAYLIST_DESCRIPTION)
 
 
     video_id = upload_video(
