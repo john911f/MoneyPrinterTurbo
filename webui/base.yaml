@@ -19,9 +19,6 @@ video_materials:
   - provider: "local"
     url: "D:\\DEV\\VideoFootage\\ai\\1.mp4"
     duration: 0
-  - provider: "local"
-    url: "D:\\DEV\\VideoFootage\\ai\\Ancient Zen City.mp4"
-    duration: 0
 video_language: ""
 voice_name: "en-US-AnaNeural-Female"
 voice_volume: 1.0
