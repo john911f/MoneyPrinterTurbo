@@ -16,6 +16,12 @@ video_materials:
   - provider: "local"
     url: "D:\\DEV\\MoneyPrinterTurbo\\storage\\local_videos\\e9e0ee29-2b8d-4da2-bb95-026ed951b556_Consistency test Inside nature Deforum animation 4K_1080p.mp4"
     duration: 0
+  - provider: "local"
+    url: "D:\\DEV\\VideoFootage\\ai\\1.mp4"
+    duration: 0
+  - provider: "local"
+    url: "D:\\DEV\\VideoFootage\\ai\\Ancient Zen City.mp4"
+    duration: 0
 video_language: ""
 voice_name: "en-US-AnaNeural-Female"
 voice_volume: 1.0
