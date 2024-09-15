@@ -78,7 +78,7 @@ for final_mp4, script_json, subfolder in file_paths:
 
 
 
-    upload_youtube(video_file=final_mp4, title=video_subject, description=script_text, tags=[author,])
+    upload_youtube(video_file=final_mp4, title=video_subject, description=script_text, tags=[author,], playlist=author)
 
     # After successful upload, move the subfolder to "january_uploaded"
     destination = os.path.join(uploaded_folder_path, os.path.basename(subfolder))
